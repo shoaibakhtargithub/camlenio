@@ -274,7 +274,7 @@ button {
 }
 .services {
   background: #f6efea;
-  padding: 80px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -348,7 +348,7 @@ button {
 }
 .process {
   background: #f6efea;
-  padding: 80px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -464,7 +464,7 @@ button {
 }
 .admin {
   background: #f6efea;
-  padding: 80px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -525,7 +525,7 @@ button {
 }
 .faq {
   background: #f6efea;
-  padding: 80px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
@@ -657,7 +657,7 @@ button {
   width: 280px;        
   max-width: 90%;      /* responsive */
 
-  min-height: 350px;   /* ⬅️ increase height */
+  min-height: 350px;   
 
   text-align: center;
   position: relative;
@@ -699,7 +699,6 @@ button {
   }
 }
 
-/* ================= MOBILE RESPONSIVE FIX ================= */
 @media (max-width: 600px) {
 
   .logo img {
@@ -762,9 +761,14 @@ button {
   width: 95%;
   }
   
-  /* HERO */
+  /* HERO 
   .hero-title {
   font-size: 26px;
+  }*/
+  .hero-title {
+    font-size: 24px;   /* slightly smaller */
+    line-height: 1.3;
+    max-width: 100%;
   }
   
   .hero-left p {
@@ -813,7 +817,6 @@ button {
   }
   
  
-  /* ===== MOBILE HORIZONTAL SCROLL ===== */
 /*@media (max-width: 600px) {
 
   .services-grid,
@@ -838,7 +841,7 @@ button {
   }
 
 }*/
-/* ===== FINAL MOBILE (SCROLL + BIG UI) ===== */
+
 @media (max-width: 600px) {
 
   .container {
@@ -911,9 +914,21 @@ button {
   font-size: 14px;
   }
   
-  .hero-stats {
+ /* .hero-stats {
   flex-direction: column;
   gap: 15px;
+  }*/
+  .hero-stats {
+    display: flex;
+    flex-direction: row;   /* ✅ important */
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .hero-stats div {
+    flex: 1;
   }
   
   button,
@@ -1015,4 +1030,79 @@ button {
   }
   
   } 
+
+  /* ===== FIX SECTION SPACING ===== */
+.process,
+.revenue,
+.admin {
+  padding: 40px 0;
+}
+
+.section-subtitle {
+  margin-bottom: 25px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .process,
+  .revenue,
+  .admin {
+    padding: 40px 0;
+  }
+}
+
+/* ===== FIX HERO TEXT ===== */
+.hero-title {
+  font-size: 26px;
+  line-height: 1.2;
+  max-width: 95%;
+}
+
+.hero-title span {
+  display: inline;   /* important */
+}
+
+/* DESKTOP */
+.hero-title {
+  max-width: 650px;   /* controls line width */
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 22px;      /* 🔥 reduce slightly */
+    line-height: 1.25;
+    max-width: 100%;
+  }
+}
+
+/* Hide break on mobile */
+@media (max-width: 600px) {
+  .desktop-break {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+}
   
+
+/* Hide mobile version on desktop */
+.mobile-title {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .desktop-title {
+    display: none;
+  }
+
+  .mobile-title {
+    display: block;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+}
